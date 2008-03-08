@@ -13,10 +13,8 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 # Source0-md5:	968f1b96aa987a35cde63c909a654e1d
 Source1:	%{orgname}-kommandersplash.png
 URL:		http://www.kde.org/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1.6.1
-#BuildRequires:	kdelibs-devel >= %{_minlibsevr}
-#BuildRequires:	kdesdk-libcvsservice-devel >= 3:3.4.0
+BuildRequires:	QtWebKit-devel >= 4.4.0
+BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
@@ -51,8 +49,7 @@ características.
 Summary:	A powerful string replacer
 Summary(pl.UTF-8):	Rozbudowane narzędzie do zamiany tekstu
 Group:		X11/Development/Tools
-Requires:	kdebase-core >= %{_minbasesevr}
-Obsoletes:	kdesdk-kfilereplace
+Requires:	kde4-kdebase-core >= %{version}
 Conflicts:	quanta < 1:3.2.90
 
 %description kfilereplace
@@ -67,7 +64,7 @@ ilości plików, podczas jednej operacji.
 Summary:	An HTML image map editor
 Summary(pl.UTF-8):	Edytor map obrazów w HTML
 Group:		X11/Development/Tools
-Requires:	kdebase-core >= %{_minbasesevr}
+Requires:	kde4-kdebase-core >= %{version}
 
 %description kimagemapeditor
 An HTML image map editor.
@@ -79,8 +76,7 @@ Edytor map obrazów w HTML.
 Summary:	Link checker for KDE
 Summary(pl.UTF-8):	Program do sprawdzania odnośników pod KDE.
 Group:		X11/Development/Tools
-Requires:	kdebase-core >= %{_minbasesevr}
-Conflicts:	kdewebdev-quanta_be
+Requires:	kde4-kdebase-core >= %{version}
 
 %description klinkstatus
 KLinkStatus is an Open Source tool for checking links in a web page.
@@ -101,8 +97,8 @@ połączenie dla wszystkich sekwencji żądań.
 Summary:	A langauage independent visual dialog building tool
 Summary(pl.UTF-8):	Niezależne od języka narzędzie do budowy okien dialogowych
 Group:		X11/Development/Tools
-Requires:	%{name}-kommander-executor = %{epoch}:%{version}-%{release}
-Requires:	kdebase-core >= %{_minbasesevr}
+Requires:	%{name}-kommander-executor = %{version}-%{release}
+Requires:	kde4-kdebase-core >= %{version}
 Conflicts:	quanta < 1:3.2.3
 
 %description kommander
@@ -189,8 +185,7 @@ natychmiast poddane wszystkim dostępnym językom.
 Summary:	Kommander executor
 Summary(pl.UTF-8):	Wykonawca Kommandera
 Group:		X11/Applications
-Requires:	kdebase-core >= %{_minbasesevr}
-Conflicts:	kdewebdev-kommander < 2:3.5.6-2
+Requires:	kde4-kdebase-core >= %{version}
 
 %description kommander-executor
 Executor of Kommander scripts.
@@ -202,8 +197,8 @@ Wykonawca skryptów Kommandera.
 Summary:	Development files for kommander
 Summary(pl.UTF-8):	Nagłówki dla kommandera
 Group:		X11/Development/Libraries
-Requires:	%{name}-kommander-executor = %{epoch}:%{version}-%{release}
-Provides:	quanta-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-kommander-executor = %{version}-%{release}
+Provides:	quanta-devel = %{version}-%{release}
 Obsoletes:	quanta-devel
 
 %description kommander-devel
@@ -216,7 +211,7 @@ Nagłówki dla kommandera.
 Summary:	KXsldbg - graphical debugger and frontend to xsldbg
 Summary(pl.UTF-8):	KXsldbg - graficzny debugger i frontend do xsldbg
 Group:		X11/Development/Tools
-Requires:	kdebase-core >= %{_minbasesevr}
+Requires:	kde4-kdebase-core >= %{version}
 Conflicts:	quanta < 1:3.2.3
 
 %description kxsldbg
@@ -244,7 +239,7 @@ Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzie do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Group:		X11/Development/Tools
-Requires:	kdebase-core >= %{_minbasesevr}
+Requires:	kde4-kdebase-core >= %{version}
 # Applications required for full functionality:
 %if 0
 Requires:	kdesdk-kompare
