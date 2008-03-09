@@ -286,7 +286,7 @@ características.
 #install %{SOURCE1} kommander/editor/pics/kommandersplash.png
 
 %build
-mkdir build
+install -d build
 cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
@@ -302,9 +302,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
-
-# unsupported
-
 
 %find_lang kfilereplace	--with-kde
 %find_lang kimagemapeditor --with-kde
@@ -352,67 +349,59 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.kde.kfilereplace.xml
 %{_datadir}/dbus-1/interfaces/org.kdewebdev.klinkstatus.ISearchManager.xml
 
-%if 0
-%files kommander -f kommander.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/kmdr-editor
-%attr(755,root,root) %{_bindir}/kmdr-plugins
-%{_datadir}/mimelnk/application/x-kommander.desktop
-%{_desktopdir}/kde/kmdr-editor.desktop
-%{_datadir}/apps/kommander
-%{_iconsdir}/crystalsvg/*/apps/kommander.png
-%{_datadir}/apps/katepart/syntax/kommander.xml
-%endif
+#%files kommander -f kommander.lang
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/kmdr-editor
+#%attr(755,root,root) %{_bindir}/kmdr-plugins
+#%{_datadir}/mimelnk/application/x-kommander.desktop
+#%{_desktopdir}/kde/kmdr-editor.desktop
+#%{_datadir}/apps/kommander
+#%{_iconsdir}/crystalsvg/*/apps/kommander.png
+#%{_datadir}/apps/katepart/syntax/kommander.xml
 
-%if 0
-%files kommander-executor
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/kmdr-executor
-%attr(755,root,root) %{_libdir}/libkommanderplugin.so.*.*.*
-%attr(755,root,root) %{_libdir}/libkommanderwidget.so.*.*.*
-%attr(755,root,root) %{_libdir}/libkommanderwidgets.so.*.*.*
-%{_datadir}/applnk/.hidden/kmdr-executor.desktop
-%endif
+#%files kommander-executor
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/kmdr-executor
+#%attr(755,root,root) %{_libdir}/libkommanderplugin.so.*.*.*
+#%attr(755,root,root) %{_libdir}/libkommanderwidget.so.*.*.*
+#%attr(755,root,root) %{_libdir}/libkommanderwidgets.so.*.*.*
+#%{_datadir}/applnk/.hidden/kmdr-executor.desktop
 
-%if 0
-%files kommander-devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libkommanderplugin.so
-%attr(755,root,root) %{_libdir}/libkommanderwidget.so
-%attr(755,root,root) %{_libdir}/libkommanderwidgets.so
-%{_includedir}/kommanderfactory.h
-%{_includedir}/kommanderplugin.h
-%{_includedir}/kommanderwidget.h
-%{_includedir}/kommander_export.h
-%endif
+#%files kommander-devel
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_libdir}/libkommanderplugin.so
+#%attr(755,root,root) %{_libdir}/libkommanderwidget.so
+#%attr(755,root,root) %{_libdir}/libkommanderwidgets.so
+#%{_includedir}/kommanderfactory.h
+#%{_includedir}/kommanderplugin.h
+#%{_includedir}/kommanderwidget.h
+#%{_includedir}/kommander_export.h
 
-%if 0
-%files kxsldbg -f kxsldbg.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/kxsldbg
-%attr(755,root,root) %{_bindir}/xsldbg
-%attr(755,root,root) %{_libdir}/kde4/libkxsldbgpart.so
-%{_datadir}/apps/kxsldbg
-%{_datadir}/apps/kxsldbgpart
-%{_datadir}/services/kxsldbg_part.desktop
-%{_desktopdir}/kde/kxsldbg.desktop
-%{_iconsdir}/[!l]*/*/actions/xsldbg_*.png
-%endif
+#%files kxsldbg -f kxsldbg.lang
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/kxsldbg
+#%attr(755,root,root) %{_bindir}/xsldbg
+#%attr(755,root,root) %{_libdir}/kde4/libkxsldbgpart.so
+#%{_datadir}/apps/kxsldbg
+#%{_datadir}/apps/kxsldbgpart
+#%{_datadir}/services/kxsldbg_part.desktop
+#%{_desktopdir}/kde/kxsldbg.desktop
+#%{_iconsdir}/[!l]*/*/actions/xsldbg_*.png
+%{_kdedocdir}/en/kxsldbg
+%{_kdedocdir}/en/xsldbg
 
-%if 0
-%files quanta -f quanta.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/quanta
-%attr(755,root,root) %{_libdir}/kde4/quantadebuggergubed.so
-%attr(755,root,root) %{_libdir}/kde4/quantadebuggerdbgp.so
-%{_datadir}/apps/kafkapart
-%{_datadir}/apps/quanta
-%{_datadir}/mimelnk/application/x-webprj.desktop
-%{_datadir}/services/quanta_preview_config.desktop
-%{_datadir}/services/quantadebuggergubed.desktop
-%{_datadir}/services/quantadebuggerdbgp.desktop
-%{_datadir}/servicetypes/quantadebugger.desktop
-%{_desktopdir}/kde/quanta.desktop
-%{_iconsdir}/[!l]*/*/apps/quanta.png
-%{_iconsdir}/[!l]*/*/actions/[!x]*.png
-%endif
+#%files quanta -f quanta.lang
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/quanta
+#%attr(755,root,root) %{_libdir}/kde4/quantadebuggergubed.so
+#%attr(755,root,root) %{_libdir}/kde4/quantadebuggerdbgp.so
+#%{_datadir}/apps/kafkapart
+#%{_datadir}/apps/quanta
+#%{_datadir}/mimelnk/application/x-webprj.desktop
+#%{_datadir}/services/quanta_preview_config.desktop
+#%{_datadir}/services/quantadebuggergubed.desktop
+#%{_datadir}/services/quantadebuggerdbgp.desktop
+#%{_datadir}/servicetypes/quantadebugger.desktop
+#%{_desktopdir}/kde/quanta.desktop
+#%{_iconsdir}/[!l]*/*/apps/quanta.png
+#%{_iconsdir}/[!l]*/*/actions/[!x]*.png
