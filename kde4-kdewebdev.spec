@@ -12,6 +12,7 @@ Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	968f1b96aa987a35cde63c909a654e1d
 Source1:	%{orgname}-kommandersplash.png
+Patch0:		%{name}-findtidy.patch
 URL:		http://www.kde.org/
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	libgcrypt-devel
@@ -280,6 +281,7 @@ características.
 
 %prep
 %setup -q -n %{orgname}-%{version}
+%patch0 -p0
 
 #install %{SOURCE1} kommander/editor/pics/kommandersplash.png
 
