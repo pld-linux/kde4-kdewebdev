@@ -13,7 +13,6 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 # Source0-md5:	968f1b96aa987a35cde63c909a654e1d
 Source1:	%{orgname}-kommandersplash.png
 URL:		http://www.kde.org/
-BuildRequires:	QtWebKit-devel >= 4.4.0
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
