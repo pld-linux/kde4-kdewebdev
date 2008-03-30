@@ -241,14 +241,12 @@ Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Group:		X11/Development/Tools
 Requires:	kde4-kdebase-core >= %{version}
 # Applications required for full functionality:
-%if 0
 Requires:	kdesdk-kompare
 Requires:	kdewebdev-kfilereplace
 Requires:	kdewebdev-kimagemapeditor
 Requires:	kdewebdev-klinkstatus
 Requires:	kdewebdev-kommander
 Requires:	kdewebdev-kxsldbg
-%endif
 Obsoletes:	kdewebdev-quanta_be
 Obsoletes:	quanta
 Obsoletes:	quanta-doc
@@ -347,7 +345,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/klinkstatus.desktop
 %{_iconsdir}/hicolor/*/apps/klinkstatus.png
 %{_datadir}/dbus-1/interfaces/org.kde.kfilereplace.xml
-%{_datadir}/dbus-1/interfaces/org.kdewebdev.klinkstatus.ISearchManager.xml
+#%{_datadir}/dbus-1/interfaces/org.kdewebdev.klinkstatus.ISearchManager.xml
 
 #%files kommander -f kommander.lang
 #%defattr(644,root,root,755)
