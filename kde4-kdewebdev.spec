@@ -74,7 +74,7 @@ Edytor map obrazów w HTML.
 
 %package klinkstatus
 Summary:	Link checker for KDE
-Summary(pl.UTF-8):	Program do sprawdzania odnośników pod KDE.
+Summary(pl.UTF-8):	Program do sprawdzania odnośników pod KDE
 Group:		X11/Development/Tools
 Requires:	kde4-kdebase-core >= %{version}
 
@@ -92,6 +92,18 @@ wyszukiwaniu według domeny można również dodać maksymalną głębokość
 dla pozostałych domen. Dla uzyskania jak najlepszej wydajności program
 obsługuje symultaniczne połączenia oraz próbuje wykorzystać jedno
 połączenie dla wszystkich sekwencji żądań.
+
+%package klinkstatus-devel
+Summary:        Development files for klinkstatus
+Summary(pl.UTF-8):      Nag�~Bówki dla klinkstatus
+Group:          X11/Development/Tools
+Requires:       kde4-kdewebdev-klinkstatus = %{version}-%{release}
+
+%description klinkstatus-devel
+Development files for klinkstatus.
+
+%description klinkstatus-devel -l pl.UTF-8
+Nag�~Bówki dla klinkstatus.
 
 %package kommander
 Summary:	A langauage independent visual dialog building tool
@@ -241,20 +253,12 @@ Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Group:		X11/Development/Tools
 Requires:	kde4-kdebase-core >= %{version}
 # Applications required for full functionality:
-Requires:	kdesdk-kompare
-Requires:	kdewebdev-kfilereplace
-Requires:	kdewebdev-kimagemapeditor
-Requires:	kdewebdev-klinkstatus
-Requires:	kdewebdev-kommander
-Requires:	kdewebdev-kxsldbg
-Obsoletes:	kdewebdev-quanta_be
-Obsoletes:	quanta
-Obsoletes:	quanta-doc
-# until some packets provide these:
-Obsoletes:	quanta-doc-css
-Obsoletes:	quanta-doc-html
-Obsoletes:	quanta-doc-javascript
-Obsoletes:	quanta-doc-php
+Requires:	kde4-kdesdk-kompare
+Requires:	kde4-kdewebdev-kfilereplace
+Requires:	kde4-kdewebdev-kimagemapeditor
+Requires:	kde4-kdewebdev-klinkstatus
+Requires:	kde4-kdewebdev-kommander
+Requires:	kde4-kdewebdev-kxsldbg
 
 %description quanta
 Quanta Plus is a web development tool for the K Desktop Environment.
@@ -316,6 +320,9 @@ rm -rf $RPM_BUILD_ROOT
 %post	kommander-executor -p /sbin/ldconfig
 %postun	kommander-executor -p /sbin/ldconfig
 
+%post	klinkstatus	-p /sbin/ldconfig
+%postun	klinkstatus	-p /sbin/ldconfig
+
 %files kfilereplace -f kfilereplace.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kfilereplace
@@ -338,14 +345,33 @@ rm -rf $RPM_BUILD_ROOT
 %files klinkstatus -f klinkstatus.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/klinkstatus
+%attr(755,root,root) %{_libdir}/libklinkstatuscommon.so.4.*.*
+%attr(755,root,root) %ghost %{_libdir}/libklinkstatuscommon.so.4
 %attr(755,root,root) %{_libdir}/kde4/klinkstatuspart.so
+%attr(755,root,root) %{_libdir}/kde4/krossmoduleklinkstatus.so
 %{_datadir}/apps/klinkstatus
 %{_datadir}/apps/klinkstatuspart
 %{_datadir}/kde4/services/klinkstatus_part.desktop
+%{_datadir}/kde4/services/krossmoduleklinkstatus.desktop
 %{_desktopdir}/kde4/klinkstatus.desktop
 %{_iconsdir}/hicolor/*/apps/klinkstatus.png
 %{_datadir}/dbus-1/interfaces/org.kde.kfilereplace.xml
-#%{_datadir}/dbus-1/interfaces/org.kdewebdev.klinkstatus.ISearchManager.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kdewebdev.klinkstatus.SearchManager.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kdewebdev.klinkstatus.SearchManagerAgent.xml
+%{_iconsdir}/hicolor/22x22/actions/addpoint.png
+%{_iconsdir}/hicolor/22x22/actions/arrow.png
+%{_iconsdir}/hicolor/22x22/actions/circle.png
+%{_iconsdir}/hicolor/22x22/actions/circle2.png
+%{_iconsdir}/hicolor/22x22/actions/freehand.png
+%{_iconsdir}/hicolor/22x22/actions/lower.png
+%{_iconsdir}/hicolor/22x22/actions/polygon.png
+%{_iconsdir}/hicolor/22x22/actions/raise.png
+%{_iconsdir}/hicolor/22x22/actions/rectangle.png
+%{_iconsdir}/hicolor/22x22/actions/removepoint.png
+
+%files klinkstatus-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libklinkstatuscommon.so
 
 #%files kommander -f kommander.lang
 #%defattr(644,root,root,755)
