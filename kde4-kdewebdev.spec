@@ -94,16 +94,16 @@ obsługuje symultaniczne połączenia oraz próbuje wykorzystać jedno
 połączenie dla wszystkich sekwencji żądań.
 
 %package klinkstatus-devel
-Summary:        Development files for klinkstatus
-Summary(pl.UTF-8):      Nag�~Bówki dla klinkstatus
+Summary:        Development files for klinkstatus library
+Summary(pl.UTF-8):      Pliki programistyczne biblioteki klinkstatus
 Group:          X11/Development/Tools
 Requires:       kde4-kdewebdev-klinkstatus = %{version}-%{release}
 
 %description klinkstatus-devel
-Development files for klinkstatus.
+Development files for klinkstatus library.
 
 %description klinkstatus-devel -l pl.UTF-8
-Nag�~Bówki dla klinkstatus.
+Pliki programistyczne biblioteki klinkstatus.
 
 %package kommander
 Summary:	A langauage independent visual dialog building tool
