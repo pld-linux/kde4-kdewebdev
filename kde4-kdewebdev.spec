@@ -5,12 +5,12 @@ Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.0.85
-Release:	0.1
+Version:	4.0.98
+Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	1c43696c70af43afc803f0b8b290c706
+# Source0-md5:	ddb2fc65adac4d8ee9defd35d1b76e49
 Source1:	%{orgname}-kommandersplash.png
 Patch0:		%{name}-findtidy.patch
 URL:		http://www.kde.org/
@@ -283,9 +283,7 @@ características.
 
 %prep
 %setup -q -n %{orgname}-%{version}
-#%patch0 -p0
-
-#install %{SOURCE1} kommander/editor/pics/kommandersplash.png
+%patch0 -p0
 
 %build
 install -d build
@@ -375,9 +373,9 @@ rm -rf $RPM_BUILD_ROOT
 %files klinkstatus-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libklinkstatuscommon.so
-/usr/lib/kde4/automationklinkstatus.so
-/usr/share/kde4/services/klinkstatus_automation.desktop
-/usr/share/config/klinkstatus.knsrc
+%{_libdir}/kde4/automationklinkstatus.so
+%{_datadir}/kde4/services/klinkstatus_automation.desktop
+%{_datadir}/config/klinkstatus.knsrc
 
 #%files kommander -f kommander.lang
 #%defattr(644,root,root,755)
@@ -394,7 +392,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kommander
 %attr(755,root,root) %ghost %{_libdir}/libkommandercore.so.?
 %attr(755,root,root) %{_libdir}/libkommandercore.so.*.*.*
-/usr/share/applnk/.hidden/kommander.desktop
+%{_datadir}/applnk/.hidden/kommander.desktop
 
 ##widgets
 %attr(755,root,root) %ghost %{_libdir}/libkommanderwidgets.so.?
@@ -436,7 +434,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/actions/configure.png
 %{_iconsdir}/hicolor/*/actions/mark.png
 %{_iconsdir}/hicolor/*/actions/hash.png
-/usr/share/man/man1/xsldbg.1.gz
+%{_mandir}/man1/xsldbg.1.gz
 
 #%files quanta -f quanta.lang
 #%defattr(644,root,root,755)
