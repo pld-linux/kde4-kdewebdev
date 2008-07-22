@@ -434,7 +434,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/actions/configure.png
 %{_iconsdir}/hicolor/*/actions/mark.png
 %{_iconsdir}/hicolor/*/actions/hash.png
-%{_mandir}/man1/xsldbg.1.gz
+%{_mandir}/man1/xsldbg.1*
 
 #%files quanta -f quanta.lang
 #%defattr(644,root,root,755)
