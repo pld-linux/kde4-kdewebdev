@@ -1,16 +1,16 @@
-%define		_state		unstable
-%define	orgname		kdewebdev
+%define		_state		stable
+%define		orgname		kdewebdev
 Summary:	Web development tools for KDE
 Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.0.98
+Version:	4.1.0
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	ddb2fc65adac4d8ee9defd35d1b76e49
+# Source0-md5:	58a1b35897cf0194476c9aac8a1d61e0
 Source1:	%{orgname}-kommandersplash.png
 Patch0:		%{name}-findtidy.patch
 URL:		http://www.kde.org/
@@ -283,7 +283,7 @@ características.
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p0
+%patch0 -p1
 
 %build
 install -d build
