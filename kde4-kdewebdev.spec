@@ -286,7 +286,7 @@ características.
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p1
+%patch0 -p0
 
 %build
 install -d build
