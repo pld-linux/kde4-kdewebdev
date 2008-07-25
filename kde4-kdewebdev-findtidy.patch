@@ -1,18 +1,6 @@
---- klinkstatus/src/tidy/tidyx.h	2008-01-05 00:56:02.000000000 +0100
-+++ klinkstatus/src/tidy/tidyx.h-new	2008-03-09 01:14:56.000000000 +0100
-@@ -48,8 +48,8 @@
-   Created 2002-07-11 by Charles Reitzel
- */
- 
--#include <tidy/tidy.h>
--#include <tidy/buffio.h>
-+#include <tidy.h>
-+#include <buffio.h>
- 
- #include <config-tidy.h>
-     
---- cmake/modules/FindLibTidy.cmake.orig	2008-05-21 10:33:14.000000000 +0200
-+++ cmake/modules/FindLibTidy.cmake	2008-07-22 15:15:38.743614750 +0200
+diff -ur kdewebdev-4.1.0/cmake/modules/FindLibTidy.cmake kdewebdev-4.1.0.new/cmake/modules/FindLibTidy.cmake
+--- kdewebdev-4.1.0/cmake/modules/FindLibTidy.cmake	2008-05-21 10:33:14.000000000 +0200
++++ kdewebdev-4.1.0.new/cmake/modules/FindLibTidy.cmake	2008-07-25 09:44:36.829120042 +0200
 @@ -17,7 +17,7 @@
    set(LibTidy_FIND_QUIETLY TRUE)
  endif (LIBTIDY_INCLUDE_DIR)
@@ -31,3 +19,19 @@
  
  int main()
  {
+Tylko w kdewebdev-4.1.0.new/cmake/modules: FindLibTidy.cmake~
+diff -ur kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h kdewebdev-4.1.0.new/klinkstatus/src/tidy/tidyx.h
+--- kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h	2008-01-05 00:56:02.000000000 +0100
++++ kdewebdev-4.1.0.new/klinkstatus/src/tidy/tidyx.h	2008-07-25 09:41:35.009138861 +0200
+@@ -48,8 +48,8 @@
+   Created 2002-07-11 by Charles Reitzel
+ */
+ 
+-#include <tidy/tidy.h>
+-#include <tidy/buffio.h>
++#include <tidy.h>
++#include <buffio.h>
+ 
+ #include <config-tidy.h>
+     
+Tylko w kdewebdev-4.1.0.new/klinkstatus/src/tidy: tidyx.h~
