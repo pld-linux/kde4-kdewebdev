@@ -33,4 +33,3 @@ diff -ur kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h kdewebdev-4.1.0.new/klinks
  
  #include <config-tidy.h>
      
-
