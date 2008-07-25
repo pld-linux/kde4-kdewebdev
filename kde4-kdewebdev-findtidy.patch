@@ -19,7 +19,6 @@ diff -ur kdewebdev-4.1.0/cmake/modules/FindLibTidy.cmake kdewebdev-4.1.0.new/cma
  
  int main()
  {
-Tylko w kdewebdev-4.1.0.new/cmake/modules: FindLibTidy.cmake~
 diff -ur kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h kdewebdev-4.1.0.new/klinkstatus/src/tidy/tidyx.h
 --- kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h	2008-01-05 00:56:02.000000000 +0100
 +++ kdewebdev-4.1.0.new/klinkstatus/src/tidy/tidyx.h	2008-07-25 09:41:35.009138861 +0200
@@ -34,4 +33,4 @@ diff -ur kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h kdewebdev-4.1.0.new/klinks
  
  #include <config-tidy.h>
      
-Tylko w kdewebdev-4.1.0.new/klinkstatus/src/tidy: tidyx.h~
+
