@@ -1,6 +1,5 @@
-diff -ur kdewebdev-4.1.0/cmake/modules/FindLibTidy.cmake kdewebdev-4.1.0.new/cmake/modules/FindLibTidy.cmake
---- kdewebdev-4.1.0/cmake/modules/FindLibTidy.cmake	2008-05-21 10:33:14.000000000 +0200
-+++ kdewebdev-4.1.0.new/cmake/modules/FindLibTidy.cmake	2008-07-25 09:44:36.829120042 +0200
+--- cmake/modules/FindLibTidy.cmake.old	2008-07-25 21:47:38.156473750 +0200
++++ cmake/modules/FindLibTidy.cmake	2008-07-25 21:47:50.709258250 +0200
 @@ -17,7 +17,7 @@
    set(LibTidy_FIND_QUIETLY TRUE)
  endif (LIBTIDY_INCLUDE_DIR)
@@ -10,17 +9,8 @@ diff -ur kdewebdev-4.1.0/cmake/modules/FindLibTidy.cmake kdewebdev-4.1.0.new/cma
  
  
  FIND_LIBRARY(LIBTIDY_LIBRARIES NAMES tidy)
-@@ -33,7 +33,7 @@
-    endif (NOT LibTidy_FIND_QUIETLY)
- 
-     SET(CHECK_TIDY_ULONG_SOURCE_CODE "
--#include <${LIBTIDY_INCLUDE_DIR}/tidy/tidy.h>
-+#include <${LIBTIDY_INCLUDE_DIR}/tidy.h>
- 
- int main()
- {
---- kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h.old	2008-01-05 00:56:02.000000000 +0100
-+++ kdewebdev-4.1.0/klinkstatus/src/tidy/tidyx.h	2008-07-25 21:39:26.037718250 +0200
+--- klinkstatus/src/tidy/tidyx.h.old	2008-07-25 21:48:23.151285750 +0200
++++ klinkstatus/src/tidy/tidyx.h	2008-07-25 21:48:36.464117750 +0200
 @@ -48,8 +48,8 @@
    Created 2002-07-11 by Charles Reitzel
  */
