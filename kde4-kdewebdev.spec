@@ -6,7 +6,7 @@ Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
 Version:	4.1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -14,10 +14,12 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 Source1:	%{orgname}-kommandersplash.png
 Patch0:		%{name}-findtidy.patch
 URL:		http://www.kde.org/
+BuildRequires:	boost-devel
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
+BuildRequires:	ruby-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
 BuildRequires:	tidy-devel
