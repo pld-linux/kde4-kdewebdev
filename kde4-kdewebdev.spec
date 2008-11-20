@@ -12,6 +12,7 @@ Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	3a318970e4b02ffaf5322e378f98b132
 URL:		http://www.kde.org/
+BuildRequires:	cmake >= 2.6.2
 BuildRequires:	boost-devel
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
