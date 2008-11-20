@@ -5,12 +5,12 @@ Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.1.71
+Version:	4.1.73
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	ab33c01c00369528db1b5e67baf4f818
+# Source0-md5:	3a318970e4b02ffaf5322e378f98b132
 URL:		http://www.kde.org/
 BuildRequires:	boost-devel
 BuildRequires:	kde4-kdelibs-devel >= %{version}
@@ -20,7 +20,6 @@ BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
 BuildRequires:	ruby-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	sed >= 4.0
 BuildRequires:	tidy-devel
 BuildConflicts:	quanta
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
