@@ -5,12 +5,12 @@ Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.1.81
+Version:	4.1.82
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	2b96cc8ed9ff041d7218c9a40e0d2c86
+# Source0-md5:	77af8784d76a8ee0978f1658d04079e4
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.6.2
 BuildRequires:	boost-devel
