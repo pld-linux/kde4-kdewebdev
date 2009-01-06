@@ -12,16 +12,19 @@ Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	f45489e61335fc304388db9e4af4a6a6
 URL:		http://www.kde.org/
-BuildRequires:	cmake >= 2.6.2
+BuildRequires:	automoc4
 BuildRequires:	boost-devel
+BuildRequires:	cmake >= 2.6.2
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
-BuildRequires:	ruby-devel
+BuildRequires:	phonon-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	ruby-devel
 BuildRequires:	tidy-devel
+BuildRequires:	zlib-devel
 BuildConflicts:	quanta
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -95,10 +98,10 @@ obsługuje symultaniczne połączenia oraz próbuje wykorzystać jedno
 połączenie dla wszystkich sekwencji żądań.
 
 %package klinkstatus-devel
-Summary:        Development files for klinkstatus library
-Summary(pl.UTF-8):      Pliki programistyczne biblioteki klinkstatus
-Group:          X11/Development/Tools
-Requires:       kde4-kdewebdev-klinkstatus = %{version}-%{release}
+Summary:	Development files for klinkstatus library
+Summary(pl.UTF-8):	Pliki programistyczne biblioteki klinkstatus
+Group:		X11/Development/Tools
+Requires:	kde4-kdewebdev-klinkstatus = %{version}-%{release}
 
 %description klinkstatus-devel
 Development files for klinkstatus library.
