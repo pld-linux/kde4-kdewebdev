@@ -5,25 +5,26 @@ Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.1.0
-Release:	4
+Version:	4.2.0
+Release:	3
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	58a1b35897cf0194476c9aac8a1d61e0
-Source1:	%{orgname}-kommandersplash.png
-Patch0:		%{name}-findtidy.patch
+# Source0-md5:	8b60c68f6cbbe9c5bb48caa576853f9e
 URL:		http://www.kde.org/
+BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel
+BuildRequires:	cmake >= 2.6.2
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
-BuildRequires:	ruby-devel
+BuildRequires:	phonon-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	sed >= 4.0
+BuildRequires:	ruby-devel
 BuildRequires:	tidy-devel
+BuildRequires:	zlib-devel
 BuildConflicts:	quanta
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,7 +53,7 @@ características.
 Summary:	A powerful string replacer
 Summary(pl.UTF-8):	Rozbudowane narzędzie do zamiany tekstu
 Group:		X11/Development/Tools
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Conflicts:	quanta < 1:3.2.90
 
 %description kfilereplace
@@ -67,7 +68,7 @@ ilości plików, podczas jednej operacji.
 Summary:	An HTML image map editor
 Summary(pl.UTF-8):	Edytor map obrazów w HTML
 Group:		X11/Development/Tools
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kimagemapeditor
 An HTML image map editor.
@@ -79,7 +80,7 @@ Edytor map obrazów w HTML.
 Summary:	Link checker for KDE
 Summary(pl.UTF-8):	Program do sprawdzania odnośników pod KDE
 Group:		X11/Development/Tools
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description klinkstatus
 KLinkStatus is an Open Source tool for checking links in a web page.
@@ -97,10 +98,10 @@ obsługuje symultaniczne połączenia oraz próbuje wykorzystać jedno
 połączenie dla wszystkich sekwencji żądań.
 
 %package klinkstatus-devel
-Summary:        Development files for klinkstatus library
-Summary(pl.UTF-8):      Pliki programistyczne biblioteki klinkstatus
-Group:          X11/Development/Tools
-Requires:       kde4-kdewebdev-klinkstatus = %{version}-%{release}
+Summary:	Development files for klinkstatus library
+Summary(pl.UTF-8):	Pliki programistyczne biblioteki klinkstatus
+Group:		X11/Development/Tools
+Requires:	kde4-kdewebdev-klinkstatus = %{version}-%{release}
 
 %description klinkstatus-devel
 Development files for klinkstatus library.
@@ -113,7 +114,7 @@ Summary:	A langauage independent visual dialog building tool
 Summary(pl.UTF-8):	Niezależne od języka narzędzie do budowy okien dialogowych
 Group:		X11/Development/Tools
 Requires:	%{name}-kommander-executor = %{version}-%{release}
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Conflicts:	quanta < 1:3.2.3
 
 %description kommander
@@ -200,7 +201,7 @@ natychmiast poddane wszystkim dostępnym językom.
 Summary:	Kommander executor
 Summary(pl.UTF-8):	Wykonawca Kommandera
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kommander-executor
 Executor of Kommander scripts.
@@ -226,7 +227,7 @@ Nagłówki dla kommandera.
 Summary:	KXsldbg - graphical debugger and frontend to xsldbg
 Summary(pl.UTF-8):	KXsldbg - graficzny debugger i frontend do xsldbg
 Group:		X11/Development/Tools
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Conflicts:	quanta < 1:3.2.3
 
 %description kxsldbg
@@ -254,7 +255,7 @@ Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzie do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Group:		X11/Development/Tools
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 # Applications required for full functionality:
 Requires:	kde4-kdesdk-kompare
 Requires:	kde4-kdewebdev-kfilereplace
@@ -286,7 +287,6 @@ características.
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p0
 
 %build
 install -d build
