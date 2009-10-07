@@ -1,4 +1,5 @@
-%define		_state		stable
+%define		_state		unstable
+%define		snap		svn1027298
 %define		orgname		kdewebdev
 
 Summary:	Web development tools for KDE
@@ -6,12 +7,13 @@ Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.3.1
+Version:	4.3.69
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	22b8e5055f93ef07dc8233f003109d3f
+#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
+# Source0-md5:	856efddcdf0efe5388fe7d40c4ae2137
 URL:		http://www.kde.org/
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel
@@ -287,7 +289,8 @@ tornando um editor maduro com um bom número de excelentes
 características.
 
 %prep
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}%{snap}
+#%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
@@ -424,6 +427,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xsldbg
 %attr(755,root,root) %{_libdir}/kde4/libkxsldbgpart.so
 %{_desktopdir}/kde4/kxsldbg.desktop
+%{_desktopdir}/kde4/xsldbg.desktop
 %{_datadir}/apps/kxsldbgpart
 %{_datadir}/apps/kxsldbg
 %{_datadir}/apps/xsldbg
