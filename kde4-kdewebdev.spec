@@ -11,8 +11,10 @@ Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	4ee9f8c1208231dac6626c788f67659f 
+# Source0-md5:	4ee9f8c1208231dac6626c788f67659f
 URL:		http://www.kde.org/
+BuildRequires:	Qt3Support-devel
+BuildRequires:	QtSvg-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel
 BuildRequires:	cmake >= 2.6.3
@@ -22,6 +24,8 @@ BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
 BuildRequires:	phonon-devel
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	ruby-devel
 BuildRequires:	tidy-devel
