@@ -15,6 +15,8 @@ Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
 # Source0-md5:	856efddcdf0efe5388fe7d40c4ae2137
 URL:		http://www.kde.org/
+BuildRequires:	Qt3Support-devel
+BuildRequires:	QtSvg-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel
 BuildRequires:	cmake >= 2.6.3
@@ -24,6 +26,8 @@ BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
 BuildRequires:	phonon-devel
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	ruby-devel
 BuildRequires:	tidy-devel
