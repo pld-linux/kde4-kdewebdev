@@ -1,22 +1,22 @@
 %define		_state		unstable
 %define		snap		svn1027298
 %define		orgname		kdewebdev
+%define		qtver		4.6.0
 
 Summary:	Web development tools for KDE
 Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.3.69
+Version:	4.3.80
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
-#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	856efddcdf0efe5388fe7d40c4ae2137
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	e18514a5513020ab8dd3353012cf79fd
 URL:		http://www.kde.org/
-BuildRequires:	Qt3Support-devel
-BuildRequires:	QtSvg-devel
+BuildRequires:	Qt3Support-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel
 BuildRequires:	cmake >= 2.6.3
@@ -25,9 +25,9 @@ BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel >= 1:2.6.0
 BuildRequires:	libxslt-devel >= 1.0.18
-BuildRequires:	phonon-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	phonon-devel >= 4.3.80
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	ruby-devel
 BuildRequires:	tidy-devel
@@ -293,8 +293,7 @@ tornando um editor maduro com um bom número de excelentes
 características.
 
 %prep
-%setup -q -n %{orgname}-%{version}%{snap}
-#%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
@@ -322,10 +321,10 @@ rm -rf $RPM_BUILD_ROOT
 %find_lang kimagemapeditor --with-kde
 %find_lang klinkstatus	--with-kde
 #%find_lang kommander	--with-kde
-%find_lang kxsldbg	--with-kde
+#%find_lang kxsldbg	--with-kde
 #%find_lang quanta	--with-kde
-%find_lang xsldbg	--with-kde
-cat xsldbg.lang >> kxsldbg.lang
+#%find_lang xsldbg	--with-kde
+#cat xsldbg.lang >> kxsldbg.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -425,29 +424,29 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/kommanderplugin.h
 %{_includedir}/specials.h
 
-%files kxsldbg -f kxsldbg.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/kxsldbg
-%attr(755,root,root) %{_bindir}/xsldbg
-%attr(755,root,root) %{_libdir}/kde4/libkxsldbgpart.so
-%{_desktopdir}/kde4/kxsldbg.desktop
-%{_desktopdir}/kde4/xsldbg.desktop
-%{_datadir}/apps/kxsldbgpart
-%{_datadir}/apps/kxsldbg
-%{_datadir}/apps/xsldbg
-%{_datadir}/dbus-1/interfaces/org.kde.kxsldbg.kxsldbg.xml
-%{_iconsdir}/hicolor/*/apps/kxsldbg.png
-%{_datadir}/kde4/services/kxsldbg_part.desktop
-%{_iconsdir}/hicolor/*/actions/run.png
-%{_iconsdir}/hicolor/*/actions/xsldbg_*.png
-%{_iconsdir}/hicolor/*/actions/step.png
-%{_iconsdir}/hicolor/*/actions/next.png
-%{_iconsdir}/hicolor/*/actions/1downarrow.png
-%{_iconsdir}/hicolor/*/actions/exit.png
-%{_iconsdir}/hicolor/*/actions/configure.png
-%{_iconsdir}/hicolor/*/actions/mark.png
-%{_iconsdir}/hicolor/*/actions/hash.png
-%{_mandir}/man1/xsldbg.1*
+#%files kxsldbg -f kxsldbg.lang
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/kxsldbg
+#%attr(755,root,root) %{_bindir}/xsldbg
+#%attr(755,root,root) %{_libdir}/kde4/libkxsldbgpart.so
+#%{_desktopdir}/kde4/kxsldbg.desktop
+#%{_desktopdir}/kde4/xsldbg.desktop
+#%{_datadir}/apps/kxsldbgpart
+#%{_datadir}/apps/kxsldbg
+#%{_datadir}/apps/xsldbg
+#%{_datadir}/dbus-1/interfaces/org.kde.kxsldbg.kxsldbg.xml
+#%{_iconsdir}/hicolor/*/apps/kxsldbg.png
+#%{_datadir}/kde4/services/kxsldbg_part.desktop
+#%{_iconsdir}/hicolor/*/actions/run.png
+#%{_iconsdir}/hicolor/*/actions/xsldbg_*.png
+#%{_iconsdir}/hicolor/*/actions/step.png
+#%{_iconsdir}/hicolor/*/actions/next.png
+#%{_iconsdir}/hicolor/*/actions/1downarrow.png
+#%{_iconsdir}/hicolor/*/actions/exit.png
+#%{_iconsdir}/hicolor/*/actions/configure.png
+#%{_iconsdir}/hicolor/*/actions/mark.png
+#%{_iconsdir}/hicolor/*/actions/hash.png
+#%{_mandir}/man1/xsldbg.1*
 
 #%files quanta -f quanta.lang
 #%defattr(644,root,root,755)
