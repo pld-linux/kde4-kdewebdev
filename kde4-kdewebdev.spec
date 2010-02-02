@@ -1,5 +1,4 @@
 %define		_state		unstable
-%define		snap		svn1027298
 %define		orgname		kdewebdev
 %define		qtver		4.6.0
 
