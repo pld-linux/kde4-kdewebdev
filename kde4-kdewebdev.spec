@@ -1,6 +1,6 @@
 %define		_state		unstable
 %define		orgname		kdewebdev
-%define		qtver		4.6.0
+%define		qtver		4.6.1
 
 Summary:	Web development tools for KDE
 Summary(es.UTF-8):	Uno editor WEB para KDE
