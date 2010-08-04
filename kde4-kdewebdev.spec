@@ -8,11 +8,11 @@ Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
 Version:	4.5.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	eb51568293133a1d5305a8d1d9659f59
+# Source0-md5:	ca77bb88f65fb478ee910379224b4f30
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
