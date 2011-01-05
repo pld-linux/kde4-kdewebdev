@@ -1,18 +1,18 @@
 %define		_state		stable
 %define		orgname		kdewebdev
-%define		qtver		4.7.0
+%define		qtver		4.7.1
 
 Summary:	Web development tools for KDE
 Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.5.4
-Release:	2
+Version:	4.5.5
+Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	0501cd76dd412ffb2fea85171ab3756d
+# Source0-md5:	ab0a2fe13949bfe4df0f1eee0dbbc5f6
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
@@ -27,7 +27,7 @@ BuildRequires:	libxslt-devel >= 1.0.18
 BuildRequires:	phonon-devel >= 4.4.1
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	ruby-devel
 BuildRequires:	tidy-devel
 BuildRequires:	zlib-devel
@@ -298,14 +298,9 @@ características.
 install -d build
 cd build
 %cmake \
-	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
 	-LIBTIDY_INCLUDE_DIR=%{_includedir} \
-%if "%{_lib}" == "lib64"
-	-DLIB_SUFFIX=64 \
-%endif
 	../
+
 %{__make}
 
 %install
