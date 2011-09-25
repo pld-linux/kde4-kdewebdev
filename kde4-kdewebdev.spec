@@ -1,18 +1,18 @@
 %define		_state		stable
 %define		orgname		kdewebdev
-%define		qtver		4.7.3
+%define		qtver		4.7.4
 
 Summary:	Web development tools for KDE
 Summary(es.UTF-8):	Uno editor WEB para KDE
 Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
-Version:	4.6.5
+Version:	4.7.1
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	67a572870e4f00bfd6b12dfad60929fa
+# Source0-md5:	150bb976a06777c2bfe87beac6109956
 URL:		http://www.kde.org/
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel
