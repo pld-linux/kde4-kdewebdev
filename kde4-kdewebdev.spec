@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	Narzędzia do tworzenia WWW dla KDE
 Summary(pt_BR.UTF-8):	Um editor web para o KDE
 Name:		kde4-kdewebdev
 Version:	4.14.3
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		X11/Development/Tools
 Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
